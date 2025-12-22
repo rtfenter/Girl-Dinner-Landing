@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Girl Dinner Tonight</title>
+    <meta
+      name="description"
+      content="A warm, emotionally intelligent food companion for women’s real energy. Not a recipe app. A self-care food decision assistant."
+    />
+
+    <!-- Optional: social preview -->
+    <meta property="og:title" content="Girl Dinner Tonight" />
+    <meta
+      property="og:description"
+      content="You deserve good food. Fast, comforting meal ideas based on mood, capacity, and what you already have."
+    />
+    <!-- <meta property="og:image" content="assets/og.png" /> -->
+
+    <!-- Fonts (Playfair + Inter-ish) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">G</div>
+          <div class="brand-text">
+            <div class="brand-title">Girl Dinner Tonight</div>
+            <div class="brand-subtitle">You deserve good food.</div>
+          </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="themeToggle" class="chip" type="button" aria-label="Toggle theme">
+            Theme
+          </button>
+          <a class="pill pill-primary" href="#download">Get the app</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">A warm, feminine food companion for real energy</p>
+            <h1 class="hero-title">
+              Dinner decisions, but softer.
+            </h1>
+            <p class="hero-lede">
+              Girl Dinner Tonight helps you choose something comforting based on mood, capacity,
+              ingredients, and cravings. Not a recipe app. A self-care food decision assistant.
+            </p>
+
+            <div class="hero-cta">
+              <a class="pill pill-primary" href="#download">Get the app</a>
+              <a class="pill pill-secondary" href="#how">See how it works</a>
+            </div>
+
+            <ul class="hero-bullets" role="list">
+              <li><span class="dot"></span> Quick ideas in 5–20 minutes</li>
+              <li><span class="dot"></span> Supportive, non-shaming tone</li>
+              <li><span class="dot"></span> Global, realistic meals (not just Western)</li>
+              <li><span class="dot"></span> No login. No pressure loops.</li>
+            </ul>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="App preview">
+            <div class="preview">
+              <div class="preview-top">
+                <div class="preview-pill">Tonight’s Options</div>
+                <div class="preview-chips">
+                  <span class="chip chip-selected">Cozy Night In</span>
+                  <span class="chip">Under 10</span>
+                  <span class="chip">No-cook</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3 class="card-title">Konbini Snack Bowl</h3>
+                <p class="card-meta">
+                  Comfort • Japanese • Under 10 • No-cook
+                </p>
+
+                <div class="card-section">
+                  <div class="card-label">You’ll need</div>
+                  <div class="chip-row" aria-label="Ingredients">
+                    <span class="chip">Rice</span>
+                    <span class="chip">Egg</span>
+                    <span class="chip">Scallions</span>
+                    <span class="chip">Soy sauce</span>
+                  </div>
+                </div>
+
+                <div class="card-section">
+                  <div class="card-label">Steps</div>
+                  <ol class="steps">
+                    <li>Warm the rice.</li>
+                    <li>Top with egg and scallions.</li>
+                    <li>Season gently and eat like you mean it.</li>
+                  </ol>
+                </div>
+
+                <div class="card-actions">
+                  <button class="pill pill-primary" type="button">Save</button>
+                  <button class="pill pill-link" type="button">Show me another</button>
+                </div>
+              </div>
+
+              <p class="preview-footnote">
+                Built for low capacity nights. Your effort is valid.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social proof / value strip -->
+      <section class="strip">
+        <div class="container strip-grid">
+          <div class="strip-item">
+            <div class="strip-kicker">Feels like</div>
+            <div class="strip-value">An exhale</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-kicker">Not a</div>
+            <div class="strip-value">Recipe treadmill</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-kicker">Designed for</div>
+            <div class="strip-value">Real capacity</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-kicker">Tone</div>
+            <div class="strip-value">Supportive, never shaming</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>How it works</h2>
+            <p>
+              Pick what you can handle tonight. Get a meal that matches your energy, not your ideals.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <div class="tile">
+              <div class="tile-number">1</div>
+              <h3>Mood first</h3>
+              <p>
+                Comfort me. Give me energy. Cozy night in. Light and fresh. Or just feed me.
+              </p>
+            </div>
+
+            <div class="tile">
+              <div class="tile-number">2</div>
+              <h3>Capacity and method</h3>
+              <p>
+                Under 5, 10, or 20. Air fryer, microwave, stovetop, no-cook.
+              </p>
+            </div>
+
+            <div class="tile">
+              <div class="tile-number">3</div>
+              <h3>Get an option you can actually do</h3>
+              <p>
+                Minimal steps. Real ingredients. Soft guidance. Save it for later if you want.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Features (MVP)</h2>
+            <p>Everything is designed to reduce decision fatigue and protect your peace.</p>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <h3>Emotion-aware filters</h3>
+              <p>Choose meals based on mood and capacity, not performance.</p>
+            </div>
+
+            <div class="feature">
+              <h3>Global comfort, realistically</h3>
+              <p>Ideas inspired by Korean, Japanese, Mediterranean, Mexican, Indian, and more.</p>
+            </div>
+
+            <div class="feature">
+              <h3>Girl Dinner Mode</h3>
+              <p>Snack plates, banchan, mezze, bowls. Soft and flexible with no pressure to cook.</p>
+            </div>
+
+            <div class="feature">
+              <h3>Fast by default</h3>
+              <p>Most meals land in 5–20 minutes with minimal steps and ingredients.</p>
+            </div>
+
+            <div class="feature">
+              <h3>Save what works</h3>
+              <p>Keep a local collection of meals you loved for your next low-spoon night.</p>
+            </div>
+
+            <div class="feature">
+              <h3>Privacy-forward</h3>
+              <p>No login required. No guilt loops. No public performance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots (optional placeholders) -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Soft, editorial UI</h2>
+            <p>Light mode feels like stationery. Dark mode stays warm-black and blush.</p>
+          </div>
+
+          <div class="shots">
+            <div class="shot">
+              <div class="shot-inner">
+                <div class="shot-label">Home filters</div>
+                <div class="shot-placeholder">Add screenshot: assets/screenshot-1.png</div>
+              </div>
+            </div>
+
+            <div class="shot">
+              <div class="shot-inner">
+                <div class="shot-label">Tonight’s Options</div>
+                <div class="shot-placeholder">Add screenshot: assets/screenshot-2.png</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="hint">
+            Tip: Replace placeholders with real images when ready. The layout will auto-fit.
+          </p>
+        </div>
+      </section>
+
+      <!-- Download / CTA -->
+      <section id="download" class="cta">
+        <div class="container cta-inner">
+          <div class="cta-copy">
+            <h2>Ready for a softer dinner decision?</h2>
+            <p>
+              Girl Dinner Tonight is built for the nights you are tired and still want something good.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="pill pill-primary" href="#" aria-label="App Store link (add when ready)">
+              App Store (coming soon)
+            </a>
+            <a class="pill pill-secondary" href="mailto:hello@girldinnertonight.app">
+              Contact
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>FAQ</h2>
+            <p>Clear, calm answers. No hype.</p>
+          </div>
+
+          <div class="faq">
+            <details class="faq-item">
+              <summary>Is this a recipe app?</summary>
+              <div class="faq-body">
+                <p>
+                  No. Girl Dinner Tonight is a food decision assistant. It helps you choose a realistic option
+                  for tonight based on mood, time, method, and ingredients.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Do I need an account?</summary>
+              <div class="faq-body">
+                <p>No. The app is designed to be low-friction and privacy-forward.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Is it only for women?</summary>
+              <div class="faq-body">
+                <p>
+                  It is designed with women’s lived experience in mind, but anyone who wants fast, comforting,
+                  realistic meals can use it.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What about pricing or premium?</summary>
+              <div class="faq-body">
+                <p>
+                  Premium is not finalized yet. The landing page keeps this intentionally non-specific.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <footer class="footer">
+            <div class="footer-inner">
+              <div class="footer-left">
+                <div class="footer-brand">Girl Dinner Tonight</div>
+                <div class="footer-note">You deserve good food.</div>
+              </div>
+              <div class="footer-right">
+                <a href="#download">Get the app</a>
+                <a href="mailto:hello@girldinnertonight.app">Email</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
