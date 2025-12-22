@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,12 +37,13 @@
     <header class="nav">
       <div class="container nav-inner">
         <div class="brand">
-          <!-- Put your real icon here (recommended):
-               1) Save your icon as: assets/app-icon.jpg
-               2) Uncomment the <img> below and delete the fallback mark
-          -->
-          <!-- <img class="brand-icon" src="assets/app-icon.jpg" alt="Girl Dinner Tonight app icon" /> -->
-          <div class="brand-mark" aria-hidden="true">G</div>
+          <img
+            class="brand-icon"
+            src="assets/app-icon.jpg"
+            alt="Girl Dinner Tonight app icon"
+            loading="eager"
+            decoding="async"
+          />
 
           <div class="brand-text">
             <div class="brand-title">Girl Dinner Tonight</div>
@@ -57,9 +59,15 @@
         </nav>
 
         <div class="nav-actions">
-          <!-- Spec: theme toggle is light/dark only (no system state) and should not feel like a big pill -->
-          <button id="themeToggle" type="button" aria-label="Toggle theme">
-            Theme
+          <!-- Spec: light/dark only; icon only; no text -->
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            aria-pressed="false"
+          >
+            <span class="theme-icon" aria-hidden="true"></span>
           </button>
         </div>
       </div>
@@ -110,17 +118,22 @@
                 </div>
               </div>
 
-              <!-- Spec: don’t fake the meal card UI; use a screenshot placeholder instead -->
+              <!-- Use a real screenshot (not a fake UI) -->
               <div class="shot">
                 <div class="shot-inner">
                   <div class="shot-label">Recommendation screen</div>
-                  <div class="shot-placeholder">Add screenshot: assets/recommendation.png</div>
+                  <img
+                    class="shot-img"
+                    src="assets/recommendation.png"
+                    alt="App screenshot: recommendation screen"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="shot-fallback">If this looks blank, add: assets/recommendation.png</div>
                 </div>
               </div>
 
-              <p class="preview-footnote">
-                Calm choices. No infinite scrolling. No pressure loops.
-              </p>
+              <p class="preview-footnote">Calm choices. No infinite scrolling. No pressure loops.</p>
             </div>
           </div>
         </div>
@@ -158,7 +171,6 @@
 
           <div class="grid-3">
             <div class="tile">
-              <div class="tile-number">1</div>
               <h3>Find My Meal (Primary)</h3>
               <p>Choose what you can handle tonight. Submit and get a small, bounded set of options.</p>
               <ul class="mini-list">
@@ -168,7 +180,6 @@
             </div>
 
             <div class="tile">
-              <div class="tile-number">2</div>
               <h3>Recommendation Page</h3>
               <p>One main meal + two alternates. Retry if nothing fits. Always optional, never a treadmill.</p>
               <ul class="mini-list">
@@ -179,7 +190,6 @@
             </div>
 
             <div class="tile">
-              <div class="tile-number">3</div>
               <h3>Daily Meal (Tarot Flow) — Optional</h3>
               <p>One daily dinner pull. Tarot-style tone. Deterministic per user/day. No filters.</p>
               <ul class="mini-list">
@@ -249,7 +259,7 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Soft, editorial UI</h2>
+            <h2>A Calm Interface</h2>
             <p>Screenshots from the app. No autoplay. No noise.</p>
           </div>
 
@@ -257,28 +267,56 @@
             <div class="shot">
               <div class="shot-inner">
                 <div class="shot-label">Tarot pull</div>
-                <div class="shot-placeholder">Add screenshot: assets/tarot-front.png</div>
+                <img
+                  class="shot-img"
+                  src="assets/tarot-front.png"
+                  alt="App screenshot: tarot pull"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="shot-fallback">Add screenshot: assets/tarot-front.png</div>
               </div>
             </div>
 
             <div class="shot">
               <div class="shot-inner">
                 <div class="shot-label">Tarot reveal</div>
-                <div class="shot-placeholder">Add screenshot: assets/tarot-back.png</div>
+                <img
+                  class="shot-img"
+                  src="assets/tarot-back.png"
+                  alt="App screenshot: tarot reveal"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="shot-fallback">Add screenshot: assets/tarot-back.png</div>
               </div>
             </div>
 
             <div class="shot">
               <div class="shot-inner">
                 <div class="shot-label">Meal packs</div>
-                <div class="shot-placeholder">Add screenshot: assets/packs.png</div>
+                <img
+                  class="shot-img"
+                  src="assets/packs.png"
+                  alt="App screenshot: meal packs"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="shot-fallback">Add screenshot: assets/packs.png</div>
               </div>
             </div>
 
             <div class="shot">
               <div class="shot-inner">
                 <div class="shot-label">Saved for later</div>
-                <div class="shot-placeholder">Add screenshot: assets/saved.png</div>
+                <img
+                  class="shot-img"
+                  src="assets/saved.png"
+                  alt="App screenshot: saved meals"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="shot-fallback">Add screenshot: assets/saved.png</div>
               </div>
             </div>
           </div>
