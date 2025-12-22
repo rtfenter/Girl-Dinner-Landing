@@ -12,15 +12,12 @@
 
     <!-- Social preview -->
     <meta property="og:title" content="Girl Dinner Tonight" />
-    <meta
-      property="og:description"
-      content="You deserve good food. Just dinner, without the mental load."
-    />
+    <meta property="og:description" content="You deserve good food. Just dinner, without the mental load." />
     <!-- <meta property="og:image" content="assets/og.png" /> -->
 
-    <!-- Favicons (add assets/app-icon.png or .jpg when ready) -->
-    <!-- <link rel="icon" href="assets/app-icon.png" /> -->
-    <!-- <link rel="apple-touch-icon" href="assets/app-icon.png" /> -->
+    <!-- Favicons (drop your icon into /assets and uncomment) -->
+    <!-- <link rel="icon" href="assets/app-icon.jpg" /> -->
+    <!-- <link rel="apple-touch-icon" href="assets/app-icon.jpg" /> -->
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,8 +36,13 @@
     <header class="nav">
       <div class="container nav-inner">
         <div class="brand">
-          <!-- Swap to <img class="brand-icon" src="assets/app-icon.png" alt="Girl Dinner Tonight app icon" /> when ready -->
+          <!-- Put your real icon here (recommended):
+               1) Save your icon as: assets/app-icon.jpg
+               2) Uncomment the <img> below and delete the fallback mark
+          -->
+          <!-- <img class="brand-icon" src="assets/app-icon.jpg" alt="Girl Dinner Tonight app icon" /> -->
           <div class="brand-mark" aria-hidden="true">G</div>
+
           <div class="brand-text">
             <div class="brand-title">Girl Dinner Tonight</div>
             <div class="brand-subtitle">You deserve good food.</div>
@@ -55,10 +57,10 @@
         </nav>
 
         <div class="nav-actions">
-          <button id="themeToggle" class="chip" type="button" aria-label="Toggle theme">
+          <!-- Spec: theme toggle is light/dark only (no system state) and should not feel like a big pill -->
+          <button id="themeToggle" type="button" aria-label="Toggle theme">
             Theme
           </button>
-          <a class="pill pill-primary" href="#download">Get the app</a>
         </div>
       </div>
     </header>
@@ -82,10 +84,12 @@
               <strong>That still counts.</strong>
             </p>
 
-            <div class="hero-cta">
-              <a class="pill pill-primary" href="#download">Get the app</a>
-              <a class="pill pill-secondary" href="#how">See the flows</a>
-            </div>
+            <!-- Spec: editorial clickable text (not big CTA pills) -->
+            <p class="hero-links">
+              <a href="#download">App Store (coming soon)</a>
+              <span aria-hidden="true"> · </span>
+              <a href="#how">See the flows</a>
+            </p>
 
             <ul class="hero-bullets" role="list">
               <li><span class="dot"></span> One main meal, plus a couple of gentle alternatives</li>
@@ -106,45 +110,11 @@
                 </div>
               </div>
 
-              <!-- Demo card content (replace with screenshots later if you want) -->
-              <div class="card">
-                <h3 class="card-title">Sweet Cinnamon Hotteok Bites</h3>
-                <p class="card-meta">Cozy • Treat Yourself Mode • Under 10 • Stovetop</p>
-
-                <div class="card-section">
-                  <div class="card-label">You’ll need</div>
-                  <div class="chip-row" aria-label="Ingredients">
-                    <span class="chip">Dough</span>
-                    <span class="chip">Brown Sugar</span>
-                    <span class="chip">Cinnamon</span>
-                    <span class="chip">Butter</span>
-                  </div>
-                </div>
-
-                <div class="card-section">
-                  <div class="card-label">Steps</div>
-                  <ol class="steps">
-                    <li>Form small dough balls.</li>
-                    <li>Flatten and fill with cinnamon sugar.</li>
-                    <li>Pan-fry in butter until golden.</li>
-                    <li>Serve hot with an extra sprinkle of sugar.</li>
-                  </ol>
-                </div>
-
-                <div class="card-actions">
-                  <button class="pill pill-primary" type="button">Save</button>
-                  <button class="pill pill-link" type="button">Retry</button>
-                </div>
-
-                <div class="mini-cards" aria-label="Two alternate options">
-                  <div class="mini-card">
-                    <div class="mini-title">Konbini Snack Bowl</div>
-                    <div class="mini-meta">Under 10 • No-cook</div>
-                  </div>
-                  <div class="mini-card">
-                    <div class="mini-title">Air Fryer Dumplings</div>
-                    <div class="mini-meta">Under 10 • Air fryer</div>
-                  </div>
+              <!-- Spec: don’t fake the meal card UI; use a screenshot placeholder instead -->
+              <div class="shot">
+                <div class="shot-inner">
+                  <div class="shot-label">Recommendation screen</div>
+                  <div class="shot-placeholder">Add screenshot: assets/recommendation.png</div>
                 </div>
               </div>
 
@@ -183,25 +153,13 @@
         <div class="container">
           <div class="section-head">
             <h2>How it works</h2>
-            <p>Two flows: passive or intentional. Both stay calm.</p>
+            <p>Two flows: intentional (primary) or passive (optional). Both stay calm.</p>
           </div>
 
           <div class="grid-3">
             <div class="tile">
               <div class="tile-number">1</div>
-              <h3>Daily Meal (Tarot Flow)</h3>
-              <p>One daily dinner pull. Tarot-style tone. Deterministic per user/day. No filters.</p>
-              <ul class="mini-list">
-                <li>✅ Save</li>
-                <li>✅ I made this</li>
-                <li>❌ No “show me another”</li>
-                <li>❌ No grocery list actions</li>
-              </ul>
-            </div>
-
-            <div class="tile">
-              <div class="tile-number">2</div>
-              <h3>Find My Meal (Active Choice)</h3>
+              <h3>Find My Meal (Primary)</h3>
               <p>Choose what you can handle tonight. Submit and get a small, bounded set of options.</p>
               <ul class="mini-list">
                 <li><strong>Required:</strong> Mode, Mood, Cuisine</li>
@@ -210,13 +168,25 @@
             </div>
 
             <div class="tile">
-              <div class="tile-number">3</div>
+              <div class="tile-number">2</div>
               <h3>Recommendation Page</h3>
               <p>One main meal + two alternates. Retry if nothing fits. Always optional, never a treadmill.</p>
               <ul class="mini-list">
-                <li>🔄 Retry (same context)</li>
-                <li>✏️ Edit filters (preserves selections)</li>
-                <li>❤️ Save • ✅ I made this</li>
+                <li>Retry (same context)</li>
+                <li>Edit filters (preserves selections)</li>
+                <li>Save • I made this</li>
+              </ul>
+            </div>
+
+            <div class="tile">
+              <div class="tile-number">3</div>
+              <h3>Daily Meal (Tarot Flow) — Optional</h3>
+              <p>One daily dinner pull. Tarot-style tone. Deterministic per user/day. No filters.</p>
+              <ul class="mini-list">
+                <li>Save</li>
+                <li>I made this</li>
+                <li>No “show me another”</li>
+                <li>No grocery list actions</li>
               </ul>
             </div>
           </div>
@@ -313,9 +283,7 @@
             </div>
           </div>
 
-          <p class="hint">
-            Tip: Drop PNGs into /assets with these filenames. The layout will auto-fit.
-          </p>
+          <p class="hint">Tip: Drop PNGs into /assets with these filenames. The layout will auto-fit.</p>
         </div>
       </section>
 
@@ -372,9 +340,7 @@
               </div>
             </div>
 
-            <p class="premium-footnote">
-              Designed without ads, notifications, or streaks.
-            </p>
+            <p class="premium-footnote">Designed without ads, notifications, or streaks.</p>
           </div>
         </div>
       </section>
@@ -391,9 +357,7 @@
             <a class="pill pill-primary" href="#" aria-label="App Store link (add when ready)">
               App Store (coming soon)
             </a>
-            <a class="pill pill-secondary" href="mailto:hello@girldinnertonight.app">
-              Contact
-            </a>
+            <a class="pill pill-secondary" href="mailto:hello@girldinnertonight.app">Contact</a>
           </div>
         </div>
       </section>
@@ -420,9 +384,7 @@
             <details class="faq-item">
               <summary>Do you track anything about me?</summary>
               <div class="faq-body">
-                <p>
-                  No accounts. No streaks. No grading. The app is designed to avoid pressure loops by default.
-                </p>
+                <p>No accounts. No streaks. No grading. The app is designed to avoid pressure loops by default.</p>
               </div>
             </details>
 
@@ -448,9 +410,7 @@
             <details class="faq-item">
               <summary>Is this only for women?</summary>
               <div class="faq-body">
-                <p>
-                  It is designed with women’s lived experience in mind, but anyone who wants calm, realistic dinner decisions can use it.
-                </p>
+                <p>It is designed with women’s lived experience in mind, but anyone who wants calm, realistic dinner decisions can use it.</p>
               </div>
             </details>
           </div>
@@ -462,7 +422,7 @@
                 <div class="footer-note">You deserve good food.</div>
               </div>
               <div class="footer-right">
-                <a href="#download">Get the app</a>
+                <a href="#download">App Store</a>
                 <a href="mailto:hello@girldinnertonight.app">Email</a>
               </div>
             </div>
