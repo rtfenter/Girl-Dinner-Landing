@@ -4,20 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Girl Dinner Tonight</title>
+
     <meta
       name="description"
-      content="A warm, emotionally intelligent food companion for women’s real energy. Not a recipe app. A self-care food decision assistant."
+      content="Girl Dinner Tonight is a calm way to decide what to eat — without overthinking, tracking, or pressure."
     />
 
-    <!-- Optional: social preview -->
+    <!-- Social preview -->
     <meta property="og:title" content="Girl Dinner Tonight" />
     <meta
       property="og:description"
-      content="You deserve good food. Fast, comforting meal ideas based on mood, capacity, and what you already have."
+      content="You deserve good food. Just dinner, without the mental load."
     />
     <!-- <meta property="og:image" content="assets/og.png" /> -->
 
-    <!-- Fonts (Playfair + Inter-ish) -->
+    <!-- Favicons (add assets/app-icon.png or .jpg when ready) -->
+    <!-- <link rel="icon" href="assets/app-icon.png" /> -->
+    <!-- <link rel="apple-touch-icon" href="assets/app-icon.png" /> -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,6 +39,7 @@
     <header class="nav">
       <div class="container nav-inner">
         <div class="brand">
+          <!-- Swap to <img class="brand-icon" src="assets/app-icon.png" alt="Girl Dinner Tonight app icon" /> when ready -->
           <div class="brand-mark" aria-hidden="true">G</div>
           <div class="brand-text">
             <div class="brand-title">Girl Dinner Tonight</div>
@@ -43,7 +49,8 @@
 
         <nav class="nav-links" aria-label="Primary">
           <a href="#how">How it works</a>
-          <a href="#features">Features</a>
+          <a href="#features">What’s inside</a>
+          <a href="#premium">Premium</a>
           <a href="#faq">FAQ</a>
         </nav>
 
@@ -61,25 +68,30 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">A warm, feminine food companion for real energy</p>
-            <h1 class="hero-title">
-              Dinner decisions, but softer.
-            </h1>
+            <p class="eyebrow">Decision relief with agency • Calm, soft logic • No pressure</p>
+
+            <h1 class="hero-title">Just dinner, without the mental load.</h1>
+
             <p class="hero-lede">
-              Girl Dinner Tonight helps you choose something comforting based on mood, capacity,
-              ingredients, and cravings. Not a recipe app. A self-care food decision assistant.
+              Girl Dinner Tonight is a calm way to decide what to eat — without overthinking, tracking, or pressure.
+            </p>
+
+            <p class="hero-lede">
+              Open the app and get a single dinner idea at a time. Some nights that means a cozy bowl. Some nights it means gym fuel.
+              Some nights it means eating cold pizza over the sink and calling it dinner.
+              <strong>That still counts.</strong>
             </p>
 
             <div class="hero-cta">
               <a class="pill pill-primary" href="#download">Get the app</a>
-              <a class="pill pill-secondary" href="#how">See how it works</a>
+              <a class="pill pill-secondary" href="#how">See the flows</a>
             </div>
 
             <ul class="hero-bullets" role="list">
-              <li><span class="dot"></span> Quick ideas in 5–20 minutes</li>
-              <li><span class="dot"></span> Supportive, non-shaming tone</li>
-              <li><span class="dot"></span> Global, realistic meals (not just Western)</li>
-              <li><span class="dot"></span> No login. No pressure loops.</li>
+              <li><span class="dot"></span> One main meal, plus a couple of gentle alternatives</li>
+              <li><span class="dot"></span> Retry if nothing feels right</li>
+              <li><span class="dot"></span> No login. No notifications. No streaks.</li>
+              <li><span class="dot"></span> No calorie tracking. No shame loops.</li>
             </ul>
           </div>
 
@@ -89,68 +101,79 @@
                 <div class="preview-pill">Tonight’s Options</div>
                 <div class="preview-chips">
                   <span class="chip chip-selected">Cozy Night In</span>
+                  <span class="chip">Just Dinner Mode</span>
                   <span class="chip">Under 10</span>
-                  <span class="chip">No-cook</span>
                 </div>
               </div>
 
+              <!-- Demo card content (replace with screenshots later if you want) -->
               <div class="card">
-                <h3 class="card-title">Konbini Snack Bowl</h3>
-                <p class="card-meta">
-                  Comfort • Japanese • Under 10 • No-cook
-                </p>
+                <h3 class="card-title">Sweet Cinnamon Hotteok Bites</h3>
+                <p class="card-meta">Cozy • Treat Yourself Mode • Under 10 • Stovetop</p>
 
                 <div class="card-section">
                   <div class="card-label">You’ll need</div>
                   <div class="chip-row" aria-label="Ingredients">
-                    <span class="chip">Rice</span>
-                    <span class="chip">Egg</span>
-                    <span class="chip">Scallions</span>
-                    <span class="chip">Soy sauce</span>
+                    <span class="chip">Dough</span>
+                    <span class="chip">Brown Sugar</span>
+                    <span class="chip">Cinnamon</span>
+                    <span class="chip">Butter</span>
                   </div>
                 </div>
 
                 <div class="card-section">
                   <div class="card-label">Steps</div>
                   <ol class="steps">
-                    <li>Warm the rice.</li>
-                    <li>Top with egg and scallions.</li>
-                    <li>Season gently and eat like you mean it.</li>
+                    <li>Form small dough balls.</li>
+                    <li>Flatten and fill with cinnamon sugar.</li>
+                    <li>Pan-fry in butter until golden.</li>
+                    <li>Serve hot with an extra sprinkle of sugar.</li>
                   </ol>
                 </div>
 
                 <div class="card-actions">
                   <button class="pill pill-primary" type="button">Save</button>
-                  <button class="pill pill-link" type="button">Show me another</button>
+                  <button class="pill pill-link" type="button">Retry</button>
+                </div>
+
+                <div class="mini-cards" aria-label="Two alternate options">
+                  <div class="mini-card">
+                    <div class="mini-title">Konbini Snack Bowl</div>
+                    <div class="mini-meta">Under 10 • No-cook</div>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-title">Air Fryer Dumplings</div>
+                    <div class="mini-meta">Under 10 • Air fryer</div>
+                  </div>
                 </div>
               </div>
 
               <p class="preview-footnote">
-                Built for low capacity nights. Your effort is valid.
+                Calm choices. No infinite scrolling. No pressure loops.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Social proof / value strip -->
+      <!-- Value strip -->
       <section class="strip">
         <div class="container strip-grid">
           <div class="strip-item">
-            <div class="strip-kicker">Feels like</div>
-            <div class="strip-value">An exhale</div>
+            <div class="strip-kicker">Designed without</div>
+            <div class="strip-value">Pressure loops</div>
           </div>
           <div class="strip-item">
-            <div class="strip-kicker">Not a</div>
-            <div class="strip-value">Recipe treadmill</div>
+            <div class="strip-kicker">Interaction model</div>
+            <div class="strip-value">Decision relief</div>
           </div>
           <div class="strip-item">
-            <div class="strip-kicker">Designed for</div>
-            <div class="strip-value">Real capacity</div>
+            <div class="strip-kicker">Affirmation</div>
+            <div class="strip-value">Only when earned</div>
           </div>
           <div class="strip-item">
-            <div class="strip-kicker">Tone</div>
-            <div class="strip-value">Supportive, never shaming</div>
+            <div class="strip-kicker">Principle</div>
+            <div class="strip-value">Calm &gt; optimization</div>
           </div>
         </div>
       </section>
@@ -160,108 +183,199 @@
         <div class="container">
           <div class="section-head">
             <h2>How it works</h2>
-            <p>
-              Pick what you can handle tonight. Get a meal that matches your energy, not your ideals.
-            </p>
+            <p>Two flows: passive or intentional. Both stay calm.</p>
           </div>
 
           <div class="grid-3">
             <div class="tile">
               <div class="tile-number">1</div>
-              <h3>Mood first</h3>
-              <p>
-                Comfort me. Give me energy. Cozy night in. Light and fresh. Or just feed me.
-              </p>
+              <h3>Daily Meal (Tarot Flow)</h3>
+              <p>One daily dinner pull. Tarot-style tone. Deterministic per user/day. No filters.</p>
+              <ul class="mini-list">
+                <li>✅ Save</li>
+                <li>✅ I made this</li>
+                <li>❌ No “show me another”</li>
+                <li>❌ No grocery list actions</li>
+              </ul>
             </div>
 
             <div class="tile">
               <div class="tile-number">2</div>
-              <h3>Capacity and method</h3>
-              <p>
-                Under 5, 10, or 20. Air fryer, microwave, stovetop, no-cook.
-              </p>
+              <h3>Find My Meal (Active Choice)</h3>
+              <p>Choose what you can handle tonight. Submit and get a small, bounded set of options.</p>
+              <ul class="mini-list">
+                <li><strong>Required:</strong> Mode, Mood, Cuisine</li>
+                <li><strong>Optional:</strong> Dietary, Time, Ingredients</li>
+              </ul>
             </div>
 
             <div class="tile">
               <div class="tile-number">3</div>
-              <h3>Get an option you can actually do</h3>
-              <p>
-                Minimal steps. Real ingredients. Soft guidance. Save it for later if you want.
-              </p>
+              <h3>Recommendation Page</h3>
+              <p>One main meal + two alternates. Retry if nothing fits. Always optional, never a treadmill.</p>
+              <ul class="mini-list">
+                <li>🔄 Retry (same context)</li>
+                <li>✏️ Edit filters (preserves selections)</li>
+                <li>❤️ Save • ✅ I made this</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features -->
+      <!-- What’s inside -->
       <section id="features" class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Features (MVP)</h2>
-            <p>Everything is designed to reduce decision fatigue and protect your peace.</p>
+            <h2>What’s inside</h2>
+            <p>Built to work immediately on open. No setup. No account. No performance.</p>
           </div>
 
           <div class="feature-grid">
             <div class="feature">
-              <h3>Emotion-aware filters</h3>
-              <p>Choose meals based on mood and capacity, not performance.</p>
+              <h3>2,000+ meals</h3>
+              <p>Across cuisines, moods, dietary preferences, and time constraints.</p>
             </div>
 
             <div class="feature">
-              <h3>Global comfort, realistically</h3>
-              <p>Ideas inspired by Korean, Japanese, Mediterranean, Mexican, Indian, and more.</p>
+              <h3>Daily tarot-style dinner pull</h3>
+              <p>A passive suggestion when you don’t want to think.</p>
             </div>
 
             <div class="feature">
-              <h3>Girl Dinner Mode</h3>
-              <p>Snack plates, banchan, mezze, bowls. Soft and flexible with no pressure to cook.</p>
+              <h3>Find My Meal filters</h3>
+              <p>Mode + mood + cuisine, plus optional dietary/time/ingredients.</p>
             </div>
 
             <div class="feature">
-              <h3>Fast by default</h3>
-              <p>Most meals land in 5–20 minutes with minimal steps and ingredients.</p>
+              <h3>Meal packs (10 total)</h3>
+              <p>Static, curated collections for nights when “I don’t know” is the answer.</p>
             </div>
 
             <div class="feature">
-              <h3>Save what works</h3>
-              <p>Keep a local collection of meals you loved for your next low-spoon night.</p>
+              <h3>Save + grocery lists</h3>
+              <p>Save what works. Grocery lists are built from saved meals only.</p>
             </div>
 
             <div class="feature">
-              <h3>Privacy-forward</h3>
-              <p>No login required. No guilt loops. No public performance.</p>
+              <h3>“I made this” → Weekly Meals (premium)</h3>
+              <p>Proud of you. Then a weekly list for reflection — no counters, no streaks.</p>
+            </div>
+
+            <div class="feature">
+              <h3>Privacy-forward by design</h3>
+              <p>No login • No notifications • No streaks • No calorie tracking • No shame loops</p>
+            </div>
+
+            <div class="feature">
+              <h3>Premium adds options, not pressure</h3>
+              <p>More meals and structure when you want it — without turning dinner into a project.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Screenshots (optional placeholders) -->
+      <!-- Screenshots -->
       <section class="section">
         <div class="container">
           <div class="section-head">
             <h2>Soft, editorial UI</h2>
-            <p>Light mode feels like stationery. Dark mode stays warm-black and blush.</p>
+            <p>Screenshots from the app. No autoplay. No noise.</p>
           </div>
 
           <div class="shots">
             <div class="shot">
               <div class="shot-inner">
-                <div class="shot-label">Home filters</div>
-                <div class="shot-placeholder">Add screenshot: assets/screenshot-1.png</div>
+                <div class="shot-label">Tarot pull</div>
+                <div class="shot-placeholder">Add screenshot: assets/tarot-front.png</div>
               </div>
             </div>
 
             <div class="shot">
               <div class="shot-inner">
-                <div class="shot-label">Tonight’s Options</div>
-                <div class="shot-placeholder">Add screenshot: assets/screenshot-2.png</div>
+                <div class="shot-label">Tarot reveal</div>
+                <div class="shot-placeholder">Add screenshot: assets/tarot-back.png</div>
+              </div>
+            </div>
+
+            <div class="shot">
+              <div class="shot-inner">
+                <div class="shot-label">Meal packs</div>
+                <div class="shot-placeholder">Add screenshot: assets/packs.png</div>
+              </div>
+            </div>
+
+            <div class="shot">
+              <div class="shot-inner">
+                <div class="shot-label">Saved for later</div>
+                <div class="shot-placeholder">Add screenshot: assets/saved.png</div>
               </div>
             </div>
           </div>
 
           <p class="hint">
-            Tip: Replace placeholders with real images when ready. The layout will auto-fit.
+            Tip: Drop PNGs into /assets with these filenames. The layout will auto-fit.
           </p>
+        </div>
+      </section>
+
+      <!-- Premium -->
+      <section id="premium" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Premium</h2>
+            <p>More options, when you want them.</p>
+          </div>
+
+          <div class="premium-card">
+            <p class="premium-body">
+              Premium unlocks additional modes and meals for nights when you want more structure — without turning dinner into a project.
+            </p>
+
+            <div class="premium-lines">
+              <div>Nothing is tracked.</div>
+              <div>Nothing is graded.</div>
+              <div>Nothing is optimized.</div>
+            </div>
+
+            <p class="premium-body">
+              You can use the app fully without upgrading. Premium is simply there if you want more choices.
+            </p>
+
+            <div class="premium-grid">
+              <div class="feature">
+                <h3>Premium mode</h3>
+                <p>Gym Girly (fuel-forward meals)</p>
+              </div>
+              <div class="feature">
+                <h3>More meals</h3>
+                <p>250+ additional meals</p>
+              </div>
+              <div class="feature">
+                <h3>More packs</h3>
+                <p>8 additional meal packs</p>
+              </div>
+              <div class="feature">
+                <h3>Unlimited</h3>
+                <p>Saves, grocery lists, and Weekly Meals</p>
+              </div>
+            </div>
+
+            <div class="premium-pricing">
+              <div class="price-row">
+                <div class="price-label">Lifetime</div>
+                <div class="price-value">$5.99</div>
+              </div>
+              <div class="price-row">
+                <div class="price-label">Meal packs (free users)</div>
+                <div class="price-value">$1.99 each</div>
+              </div>
+            </div>
+
+            <p class="premium-footnote">
+              Designed without ads, notifications, or streaks.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -269,10 +383,8 @@
       <section id="download" class="cta">
         <div class="container cta-inner">
           <div class="cta-copy">
-            <h2>Ready for a softer dinner decision?</h2>
-            <p>
-              Girl Dinner Tonight is built for the nights you are tired and still want something good.
-            </p>
+            <h2>You deserve good food.</h2>
+            <p>Open the app. Get a calm set of options. Move on with your night.</p>
           </div>
 
           <div class="cta-actions">
@@ -291,7 +403,7 @@
         <div class="container">
           <div class="section-head">
             <h2>FAQ</h2>
-            <p>Clear, calm answers. No hype.</p>
+            <p>Calm answers. Product honesty.</p>
           </div>
 
           <div class="faq">
@@ -299,34 +411,45 @@
               <summary>Is this a recipe app?</summary>
               <div class="faq-body">
                 <p>
-                  No. Girl Dinner Tonight is a food decision assistant. It helps you choose a realistic option
-                  for tonight based on mood, time, method, and ingredients.
+                  Not really. Girl Dinner Tonight is a dinner decision assistant. It gives you a primary suggestion and a couple of alternates —
+                  enough choice to feel agency, without overwhelming you.
                 </p>
               </div>
             </details>
 
             <details class="faq-item">
-              <summary>Do I need an account?</summary>
-              <div class="faq-body">
-                <p>No. The app is designed to be low-friction and privacy-forward.</p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Is it only for women?</summary>
+              <summary>Do you track anything about me?</summary>
               <div class="faq-body">
                 <p>
-                  It is designed with women’s lived experience in mind, but anyone who wants fast, comforting,
-                  realistic meals can use it.
+                  No accounts. No streaks. No grading. The app is designed to avoid pressure loops by default.
                 </p>
               </div>
             </details>
 
             <details class="faq-item">
-              <summary>What about pricing or premium?</summary>
+              <summary>How do saves and grocery lists work?</summary>
               <div class="faq-body">
                 <p>
-                  Premium is not finalized yet. The landing page keeps this intentionally non-specific.
+                  Saved meals live in the Saved tab. Grocery lists can only be created from saved meals — on purpose — so lists stay clean and relevant.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What does premium unlock?</summary>
+              <div class="faq-body">
+                <p>
+                  Premium unlocks Gym Girly mode, 250+ additional meals, 8 additional meal packs, Weekly Meals, and unlimited saves and grocery lists —
+                  without adding notifications, streaks, or engagement traps.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Is this only for women?</summary>
+              <div class="faq-body">
+                <p>
+                  It is designed with women’s lived experience in mind, but anyone who wants calm, realistic dinner decisions can use it.
                 </p>
               </div>
             </details>
