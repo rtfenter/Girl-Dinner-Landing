@@ -1,5 +1,4 @@
 /* styles.css */
-
 :root {
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -29,6 +28,7 @@
   --pillSelectedText: #3F2A32;
 
   --pillUnselectedText: #3F2A32;
+
   --chipBackground: #FFF9F5;
   --chipSelectedBackground: #F4A7B9;
   --chipSelectedText: #3F2A32;
@@ -110,22 +110,10 @@ a:hover { text-decoration: underline; }
   width: 40px;
   height: 40px;
   border-radius: 14px;
-  display: block;
-  box-shadow: 0 14px 32px var(--shadowPink);
   object-fit: cover;
-}
-
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: var(--pillSelectedBackground);
-  color: var(--pillSelectedText);
-  font-family: var(--font-serif);
-  font-weight: 700;
+  border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
   box-shadow: 0 14px 32px var(--shadowPink);
+  background: var(--backgroundCard);
 }
 
 .brand-title {
@@ -153,29 +141,29 @@ a:hover { text-decoration: underline; }
   align-items: center;
 }
 
-/* Theme toggle: not a big pill */
-#themeToggle {
-  appearance: none;
-  border: 1px solid color-mix(in srgb, var(--borderMuted) 65%, transparent);
-  background: color-mix(in srgb, var(--backgroundCard) 72%, transparent);
-  color: var(--textSecondary);
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 13px;
+/* Theme toggle: icon-only, minimal */
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
+  background: color-mix(in srgb, var(--backgroundCard) 70%, transparent);
+  color: var(--textPrimary);
+  box-shadow: 0 14px 34px var(--shadowLight);
   cursor: pointer;
-  box-shadow: 0 12px 30px var(--shadowLight);
-  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+  padding: 0;
 }
-#themeToggle:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 44px var(--shadowLight);
-  background: color-mix(in srgb, var(--backgroundCard) 82%, transparent);
-  text-decoration: none;
+.theme-toggle:hover {
+  box-shadow: 0 18px 48px var(--shadowLight);
 }
-#themeToggle:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--accentPink) 70%, transparent);
-  outline-offset: 2px;
+.theme-toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accentPink) 80%, transparent);
+  outline-offset: 3px;
+}
+.theme-icon svg {
+  display: block;
 }
 
 .hero {
@@ -219,21 +207,12 @@ a:hover { text-decoration: underline; }
 .hero-links {
   margin: 0 0 18px;
   color: var(--textSecondary);
-  font-size: 14px;
 }
 .hero-links a {
-  color: var(--textPrimary);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.hero-links a:hover { text-decoration: underline; }
-.hero-links span { color: var(--textMuted); }
-
-.hero-cta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 12px 0 18px;
-}
+.hero-links a:hover { color: var(--textPrimary); }
 
 .hero-bullets {
   padding: 0;
@@ -290,80 +269,6 @@ a:hover { text-decoration: underline; }
   gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
-}
-
-.card {
-  border-radius: var(--radius-lg);
-  background: var(--backgroundCard);
-  border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
-  box-shadow: 0 20px 50px var(--shadowLight);
-  padding: 16px;
-}
-
-.card-title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin: 0 0 6px;
-}
-
-.card-meta {
-  margin: 0 0 14px;
-  color: var(--textSecondary);
-  font-size: 13px;
-}
-
-.card-section { margin-top: 14px; }
-.card-label {
-  font-size: 12px;
-  color: var(--textSecondary);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.steps {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--textSecondary);
-  display: grid;
-  gap: 6px;
-}
-
-.card-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-/* NEW: Hero mini alternate meals */
-.mini-cards {
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.mini-card {
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--backgroundCard) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
-  padding: 10px 12px;
-  box-shadow: 0 14px 30px var(--shadowLight);
-}
-
-.mini-title {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  font-size: 13px;
-  margin-bottom: 4px;
-}
-
-.mini-meta {
-  color: var(--textSecondary);
-  font-size: 12px;
 }
 
 .preview-footnote {
@@ -435,18 +340,6 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 18px 40px var(--shadowLight);
 }
 
-.tile-number {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: var(--pillSelectedBackground);
-  color: var(--pillSelectedText);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
 .tile h3 {
   margin: 0 0 8px;
   font-family: var(--font-serif);
@@ -455,7 +348,6 @@ a:hover { text-decoration: underline; }
 
 .tile p { margin: 0; color: var(--textSecondary); }
 
-/* NEW: Mini lists inside tiles */
 .mini-list {
   margin: 12px 0 0;
   padding-left: 18px;
@@ -494,6 +386,7 @@ a:hover { text-decoration: underline; }
   gap: 14px;
 }
 
+/* Screenshot cards */
 .shot {
   border-radius: var(--radius-xl);
   background: color-mix(in srgb, var(--backgroundCard) 85%, transparent);
@@ -519,13 +412,18 @@ a:hover { text-decoration: underline; }
   letter-spacing: -0.02em;
 }
 
-.shot-placeholder {
-  color: var(--textSecondary);
-  font-size: 14px;
-  padding: 12px;
-  border-radius: 14px;
-  background: color-mix(in srgb, var(--backgroundCard) 70%, transparent);
+.shot-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
   border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
+  background: color-mix(in srgb, var(--backgroundCard) 70%, transparent);
+  box-shadow: 0 16px 44px var(--shadowLight);
+}
+
+.shot-fallback {
+  color: var(--textSecondary);
+  font-size: 13px;
 }
 
 .hint {
@@ -569,7 +467,7 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
 }
 
-/* NEW: Premium section */
+/* Premium section */
 .premium-card {
   border-radius: var(--radius-xl);
   background: color-mix(in srgb, var(--backgroundCard) 88%, transparent);
@@ -697,7 +595,6 @@ a:hover { text-decoration: underline; }
 }
 
 /* Components */
-
 .pill {
   display: inline-flex;
   align-items: center;
@@ -728,16 +625,6 @@ a:hover { text-decoration: underline; }
   background: color-mix(in srgb, var(--backgroundCard) 80%, transparent);
 }
 
-.pill-link {
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  padding-left: 0;
-  padding-right: 0;
-  color: var(--textSecondary);
-}
-.pill-link:hover { text-decoration: underline; transform: none; box-shadow: none; }
-
 .chip {
   display: inline-flex;
   align-items: center;
@@ -757,12 +644,6 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 16px 44px var(--shadowPink);
 }
 
-.chip-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
 /* Responsive */
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
@@ -773,5 +654,4 @@ a:hover { text-decoration: underline; }
   .premium-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .brand { min-width: unset; }
-  .mini-cards { grid-template-columns: 1fr; }
 }
