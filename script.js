@@ -1,6 +1,8 @@
+// script.js
 /**
  * Girl Dinner Tonight - Landing Theme
  * Applies the same tokens as the app to CSS variables.
+ * Spec: theme toggle is LIGHT/DARK only (no system label/state in UI).
  */
 
 const getTheme = (colorScheme) => {
@@ -104,12 +106,17 @@ const getTheme = (colorScheme) => {
   };
 };
 
-const THEME_KEY = "gdt_theme_preference"; // "light" | "dark" | "system"
+const THEME_KEY = "gdt_theme_preference"; // "light" | "dark"
 
-function setCssVars(themeObj) {
+function preferredOrSystemScheme() {
+  const stored = localStorage.getItem(THEME_KEY);
+  if (stored === "light" || stored === "dark") return stored;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function setCssVars(themeObj, scheme) {
   const root = document.documentElement;
 
-  // Map only what we actually use in CSS, but it is fine to keep the full set.
   const keys = [
     "backgroundPrimary",
     "backgroundCard",
@@ -143,49 +150,40 @@ function setCssVars(themeObj) {
     if (themeObj[k] != null) root.style.setProperty(`--${k}`, themeObj[k]);
   });
 
-  // Helpful for native UI controls
-  root.style.colorScheme = currentResolvedScheme();
-}
-
-function currentResolvedScheme() {
-  const stored = localStorage.getItem(THEME_KEY) || "system";
-  if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  // Helps native form controls + scrollbar rendering
+  root.style.colorScheme = scheme;
 }
 
 function applyTheme() {
-  const scheme = currentResolvedScheme();
+  const scheme = preferredOrSystemScheme();
   const theme = getTheme(scheme);
-  setCssVars(theme);
+  setCssVars(theme, scheme);
 
   const toggle = document.getElementById("themeToggle");
   if (toggle) {
-    const stored = localStorage.getItem(THEME_KEY) || "system";
-    const label =
-      stored === "system"
-        ? `Theme: System (${scheme})`
-        : `Theme: ${stored[0].toUpperCase()}${stored.slice(1)}`;
-    toggle.textContent = label;
+    // Keep the UI label stable per spec; store state via aria-pressed
+    toggle.textContent = "Theme";
+    toggle.setAttribute("aria-pressed", scheme === "dark" ? "true" : "false");
   }
 }
 
-function cycleThemePreference() {
-  const current = localStorage.getItem(THEME_KEY) || "system";
-  const next = current === "system" ? "light" : current === "light" ? "dark" : "system";
+function toggleTheme() {
+  const current = preferredOrSystemScheme();
+  const next = current === "dark" ? "light" : "dark";
   localStorage.setItem(THEME_KEY, next);
   applyTheme();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("themeToggle");
-  if (toggle) toggle.addEventListener("click", cycleThemePreference);
+  if (toggle) toggle.addEventListener("click", toggleTheme);
 
   applyTheme();
 
-  // React to OS changes when in system mode
+  // Only react to OS changes if the user has NOT set a preference yet
   const mq = window.matchMedia("(prefers-color-scheme: dark)");
   mq.addEventListener("change", () => {
-    const stored = localStorage.getItem(THEME_KEY) || "system";
-    if (stored === "system") applyTheme();
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored !== "light" && stored !== "dark") applyTheme();
   });
 });
