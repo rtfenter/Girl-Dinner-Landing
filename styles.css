@@ -628,4 +628,71 @@ code {
   .premium-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .brand { min-width: unset; }
+
+  /* ---------------------------------------------------------
+   App-like Pink Hierarchy (landing page usage)
+   - Dark mode: pink appears as “label ink” + micro accents
+   - Light mode: keep cocoa ink; pink stays as highlight only
+---------------------------------------------------------- */
+
+/* 1) CTA + primary pills should ALWAYS be solid pink (both modes) */
+.pill-primary {
+  background: var(--accentPink);
+  color: var(--accentPinkInk);
+  border-color: transparent;
+  box-shadow: 0 20px 60px var(--shadowPink);
+}
+
+/* 2) Links: in dark mode, links should read as pink (like app labels) */
+html[data-theme="dark"] a {
+  color: var(--accentPink);
+}
+html[data-theme="dark"] a:hover {
+  color: color-mix(in srgb, var(--accentPink) 85%, white);
+  text-decoration: underline;
+}
+
+/* 3) Brand subtitle is pink in dark mode (your app header vibe) */
+html[data-theme="dark"] .brand-subtitle {
+  color: var(--accentPink);
+}
+
+/* 4) Eyebrow + small metadata lines get pink tint in dark mode */
+html[data-theme="dark"] .eyebrow {
+  color: color-mix(in srgb, var(--accentPink) 65%, var(--textSecondary));
+}
+
+/* 5) Section “kickers” / micro labels can be pink-leaning in dark mode */
+html[data-theme="dark"] .strip-kicker {
+  color: color-mix(in srgb, var(--accentPink) 60%, var(--textSecondary));
+}
+
+/* 6) Card borders stay neutral, but give cards a subtle pink aura (very light) */
+html[data-theme="dark"] .hero-card,
+html[data-theme="dark"] .tile,
+html[data-theme="dark"] .feature,
+html[data-theme="dark"] .shot,
+html[data-theme="dark"] .premium-card,
+html[data-theme="dark"] .faq-item,
+html[data-theme="dark"] .cta-inner {
+  box-shadow:
+    0 18px 50px var(--shadowLight),
+    0 0 0 1px color-mix(in srgb, var(--accentPink) 12%, transparent);
+}
+
+/* 7) The pink dots should pop slightly more in dark mode */
+html[data-theme="dark"] .dot {
+  box-shadow:
+    0 10px 18px var(--shadowPink),
+    0 0 0 2px color-mix(in srgb, var(--accentPink) 18%, transparent);
+}
+
+/* 8) “App Store (coming soon)” / editorial link line should read pink in dark mode */
+html[data-theme="dark"] .hero-links {
+  color: var(--textSecondary);
+}
+html[data-theme="dark"] .hero-links a {
+  color: var(--accentPink);
+}
+
 }
