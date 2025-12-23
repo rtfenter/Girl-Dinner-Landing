@@ -1,11 +1,9 @@
 // script.js
-// Theme + token application (no “system” UI; icon-only toggle)
-// - Defaults to OS preference if the user hasn’t chosen
-// - Persists explicit user choice in localStorage
+// Theme + token application (icon-only toggle)
+// CHANGE: default to LIGHT unless user explicitly chose dark
 
 const THEME_KEY = "gdt_theme"; // "light" | "dark"
 
-// Matches your app light-mode semantics (unselected = neutral surface + cocoa text)
 const lightTokens = {
   backgroundPrimary: "#F3E3DB",
   backgroundCard: "#FFF9F5",
@@ -44,12 +42,7 @@ const lightTokens = {
   modalSurface: "#FFF9F5",
 };
 
-// Matches your app dark-mode semantics:
-// - surfaces are neutral (NOT pink)
-// - unselected labels can be pink
-// - selected state is solid pink
 const darkTokens = {
-  // App dark mode neutrals
   backgroundPrimary: "#1A1A1A",
   backgroundCard: "#2A2A2A",
   backgroundMuted: "#3A3A3A",
@@ -59,23 +52,19 @@ const darkTokens = {
   textMuted: "#8A7F84",
 
   accentPink: "#F4A7B9",
-  // App token: accentPinkInk = #1A1A1A
   accentPinkInk: "#1A1A1A",
 
-  // App token: borderMuted = #3A3A3A
   borderMuted: "#3A3A3A",
 
   shadowLight: "rgba(0,0,0,0.20)",
   shadowStrong: "rgba(0,0,0,0.30)",
   shadowPink: "rgba(244,167,185,0.15)",
 
-  // IMPORTANT: unselected pills/chips use muted neutral surfaces (not primary)
   pillBackground: "#3A3A3A",
   pillBorder: "transparent",
 
   pillSelectedBackground: "#F4A7B9",
   pillSelectedText: "#1A1A1A",
-  // App semantics: unselected text stays pink in dark mode
   pillUnselectedText: "#F4A7B9",
 
   chipBackground: "#3A3A3A",
@@ -96,16 +85,6 @@ function setCSSVars(tokens) {
   Object.entries(tokens).forEach(([key, value]) => {
     root.style.setProperty(`--${key}`, value);
   });
-}
-
-function isOsDark() {
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
-
-function getInitialTheme() {
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved === "light" || saved === "dark") return saved;
-  return isOsDark() ? "dark" : "light";
 }
 
 function sunIcon() {
@@ -132,14 +111,22 @@ function applyTheme(theme) {
   if (theme === "dark") {
     setCSSVars(darkTokens);
     document.documentElement.dataset.theme = "dark";
-    if (btn) btn.setAttribute("aria-pressed", "true");
+    btn?.setAttribute("aria-pressed", "true");
     if (iconWrap) iconWrap.innerHTML = sunIcon(); // show sun when currently dark
   } else {
     setCSSVars(lightTokens);
     document.documentElement.dataset.theme = "light";
-    if (btn) btn.setAttribute("aria-pressed", "false");
+    btn?.setAttribute("aria-pressed", "false");
     if (iconWrap) iconWrap.innerHTML = moonIcon(); // show moon when currently light
   }
+}
+
+function getInitialTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "light" || saved === "dark") return saved;
+
+  // CHANGE: default to LIGHT (so it looks like the app out of the box)
+  return "light";
 }
 
 function toggleTheme() {
@@ -150,20 +137,8 @@ function toggleTheme() {
 }
 
 (function init() {
-  const theme = getInitialTheme();
-  applyTheme(theme);
+  applyTheme(getInitialTheme());
 
   const btn = document.getElementById("themeToggle");
-  if (btn) btn.addEventListener("click", toggleTheme);
-
-  // If user hasn't explicitly chosen, follow OS changes quietly
-  const mq = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
-  if (mq && typeof mq.addEventListener === "function") {
-    mq.addEventListener("change", () => {
-      const saved = localStorage.getItem(THEME_KEY);
-      if (saved !== "light" && saved !== "dark") {
-        applyTheme(isOsDark() ? "dark" : "light");
-      }
-    });
-  }
+  btn?.addEventListener("click", toggleTheme);
 })();
