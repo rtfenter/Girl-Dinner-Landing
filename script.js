@@ -5,6 +5,7 @@
 
 const THEME_KEY = "gdt_theme"; // "light" | "dark"
 
+// Matches your app light-mode semantics (unselected = neutral surface + cocoa text)
 const lightTokens = {
   backgroundPrimary: "#F3E3DB",
   backgroundCard: "#FFF9F5",
@@ -24,7 +25,7 @@ const lightTokens = {
   shadowPink: "rgba(244,167,185,0.18)",
 
   pillBackground: "#FFF9F5",
-  pillBorder: "rgba(0,0,0,0.06)",
+  pillBorder: "rgba(0,0,0,0.04)",
 
   pillSelectedBackground: "#F4A7B9",
   pillSelectedText: "#3F2A32",
@@ -43,8 +44,12 @@ const lightTokens = {
   modalSurface: "#FFF9F5",
 };
 
+// Matches your app dark-mode semantics:
+// - surfaces are neutral (NOT pink)
+// - unselected labels can be pink
+// - selected state is solid pink
 const darkTokens = {
-  // Three-tone neutral system + existing colors (from your app theme)
+  // App dark mode neutrals
   backgroundPrimary: "#1A1A1A",
   backgroundCard: "#2A2A2A",
   backgroundMuted: "#3A3A3A",
@@ -54,32 +59,36 @@ const darkTokens = {
   textMuted: "#8A7F84",
 
   accentPink: "#F4A7B9",
-  accentPinkInk: "#0F0F0F",
+  // App token: accentPinkInk = #1A1A1A
+  accentPinkInk: "#1A1A1A",
 
-  borderMuted: "rgba(255,255,255,0.10)",
+  // App token: borderMuted = #3A3A3A
+  borderMuted: "#3A3A3A",
 
-  shadowLight: "rgba(0,0,0,0.30)",
-  shadowStrong: "rgba(0,0,0,0.45)",
-  shadowPink: "rgba(244,167,185,0.14)",
+  shadowLight: "rgba(0,0,0,0.20)",
+  shadowStrong: "rgba(0,0,0,0.30)",
+  shadowPink: "rgba(244,167,185,0.15)",
 
-  pillBackground: "#1A1A1A",
-  pillBorder: "rgba(255,255,255,0.10)",
+  // IMPORTANT: unselected pills/chips use muted neutral surfaces (not primary)
+  pillBackground: "#3A3A3A",
+  pillBorder: "transparent",
 
   pillSelectedBackground: "#F4A7B9",
-  pillSelectedText: "#0F0F0F",
-  pillUnselectedText: "#FAF7F2",
+  pillSelectedText: "#1A1A1A",
+  // App semantics: unselected text stays pink in dark mode
+  pillUnselectedText: "#F4A7B9",
 
-  chipBackground: "#1A1A1A",
+  chipBackground: "#3A3A3A",
   chipSelectedBackground: "#F4A7B9",
-  chipSelectedText: "#0F0F0F",
-  chipUnselectedText: "#FAF7F2",
+  chipSelectedText: "#1A1A1A",
+  chipUnselectedText: "#F4A7B9",
 
-  surfacePrimary: "#0F0F0F",
-  surfaceCard: "#1A1A1A",
+  surfacePrimary: "#1A1A1A",
+  surfaceCard: "#2A2A2A",
   surfaceElevated: "#222222",
 
   modalOverlay: "rgba(0,0,0,0.55)",
-  modalSurface: "#1A1A1A",
+  modalSurface: "#2A2A2A",
 };
 
 function setCSSVars(tokens) {
