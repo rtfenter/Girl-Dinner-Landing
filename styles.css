@@ -22,7 +22,7 @@
   --shadowPink: rgba(244,167,185,0.18);
 
   --pillBackground: #FFF9F5;
-  --pillBorder: rgba(0,0,0,0.06);
+  --pillBorder: rgba(0,0,0,0.04);
 
   --pillSelectedBackground: #F4A7B9;
   --pillSelectedText: #3F2A32;
@@ -116,6 +116,7 @@ code {
   border-radius: 14px;
   object-fit: cover;
   border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
+  /* keep pink shadow subtle (micro-accent) */
   box-shadow: 0 14px 32px var(--shadowPink);
   background: var(--backgroundCard);
 }
@@ -353,9 +354,7 @@ code {
 }
 .mini-list li strong { color: var(--textPrimary); font-weight: 700; }
 
-.how-shot {
-  margin-top: 16px;
-}
+.how-shot { margin-top: 16px; }
 
 .feature-grid {
   display: grid;
@@ -404,9 +403,7 @@ code {
   border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
 }
 
-.shot-inner.solid {
-  border-style: solid;
-}
+.shot-inner.solid { border-style: solid; }
 
 .shot-label {
   font-family: var(--font-serif);
@@ -434,9 +431,7 @@ code {
   font-size: 14px;
 }
 
-.cta {
-  padding: 42px 0;
-}
+.cta { padding: 42px 0; }
 
 .cta-inner {
   border-radius: var(--radius-xl);
@@ -526,10 +521,7 @@ code {
   border-top: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
 }
 
-.price-label {
-  color: var(--textSecondary);
-  font-weight: 600;
-}
+.price-label { color: var(--textSecondary); font-weight: 600; }
 
 .price-value {
   font-family: var(--font-serif);
@@ -543,10 +535,7 @@ code {
   font-size: 13px;
 }
 
-.faq {
-  display: grid;
-  gap: 10px;
-}
+.faq { display: grid; gap: 10px; }
 
 .faq-item {
   border-radius: var(--radius-lg);
@@ -603,7 +592,8 @@ code {
   justify-content: center;
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--borderMuted) 55%, transparent);
+  /* IMPORTANT: pills should use pillBorder (not borderMuted) */
+  border: 1px solid var(--pillBorder);
   background: var(--pillBackground);
   color: var(--pillUnselectedText);
   font-weight: 600;
@@ -624,7 +614,8 @@ code {
 }
 
 .pill-secondary {
-  background: color-mix(in srgb, var(--backgroundCard) 80%, transparent);
+  /* secondary should remain neutral surface */
+  background: var(--pillBackground);
 }
 
 /* Responsive */
