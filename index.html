@@ -17,8 +17,8 @@
     <!-- <meta property="og:image" content="assets/og.png" /> -->
 
     <!-- Favicons (drop your icon into /assets and uncomment) -->
-    <!-- <link rel="icon" href="assets/app-icon.jpg" /> -->
-    <!-- <link rel="apple-touch-icon" href="assets/app-icon.jpg" /> -->
+    <!-- <link rel="icon" href="assets/app-icon.png" /> -->
+    <!-- <link rel="apple-touch-icon" href="assets/app-icon.png" /> -->
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,8 +39,8 @@
         <div class="brand">
           <img
             class="brand-icon"
-            src="assets/app-icon.jpg"
-            alt="Girl Dinner Tonight app icon"
+            src="assets/app-icon.png"
+            alt="Girl Dinner Tonight"
             loading="eager"
             decoding="async"
           />
@@ -59,7 +59,7 @@
         </nav>
 
         <div class="nav-actions">
-          <!-- Spec: light/dark only; icon only; no text -->
+          <!-- Spec: light/dark only; icon only; no “system” UI -->
           <button
             id="themeToggle"
             class="theme-toggle"
@@ -78,7 +78,10 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Decision relief with agency • Calm, soft logic • No pressure</p>
+            <!-- Spec: no big pill container -->
+            <p class="eyebrow">
+              Calm dinner decisions • No pressure • No tracking
+            </p>
 
             <h1 class="hero-title">Just dinner, without the mental load.</h1>
 
@@ -87,49 +90,44 @@
             </p>
 
             <p class="hero-lede">
-              Open the app and get a single dinner idea at a time. Some nights that means a cozy bowl. Some nights it means gym fuel.
-              Some nights it means eating cold pizza over the sink and calling it dinner.
-              <strong>That still counts.</strong>
+              Open the app and get one dinner idea at a time, plus gentle backups if it isn’t quite right.
+              If ingredients don’t match exactly, swap for what you have.
+              <strong>It still counts.</strong>
             </p>
 
             <!-- Spec: editorial clickable text (not big CTA pills) -->
             <p class="hero-links">
               <a href="#download">App Store (coming soon)</a>
               <span aria-hidden="true"> · </span>
-              <a href="#how">See the flows</a>
+              <a href="#how">See how it works</a>
             </p>
 
             <ul class="hero-bullets" role="list">
-              <li><span class="dot"></span> One main meal, plus a couple of gentle alternatives</li>
-              <li><span class="dot"></span> Retry if nothing feels right</li>
+              <li><span class="dot"></span> One main meal, plus gentle backups</li>
+              <li><span class="dot"></span> “Let me see another” when you need it</li>
               <li><span class="dot"></span> No login. No notifications. No streaks.</li>
               <li><span class="dot"></span> No calorie tracking. No shame loops.</li>
             </ul>
           </div>
 
+          <!-- Spec: real screenshot, not fake UI -->
           <div class="hero-card" role="region" aria-label="App preview">
             <div class="preview">
-              <div class="preview-top">
-                <div class="preview-pill">Tonight’s Options</div>
-                <div class="preview-chips">
-                  <span class="chip chip-selected">Cozy Night In</span>
-                  <span class="chip">Just Dinner Mode</span>
-                  <span class="chip">Under 10</span>
-                </div>
+              <div class="preview-head">
+                <div class="preview-title">Meal ideas for tonight</div>
+                <div class="preview-subtitle">One main meal, plus gentle backups.</div>
               </div>
 
-              <!-- Use a real screenshot (not a fake UI) -->
-              <div class="shot">
-                <div class="shot-inner">
-                  <div class="shot-label">Recommendation screen</div>
+              <div class="shot shot-hero">
+                <div class="shot-inner solid">
                   <img
                     class="shot-img"
-                    src="assets/recommendation.png"
-                    alt="App screenshot: recommendation screen"
-                    loading="lazy"
+                    src="assets/meal-rec-hero.jpg"
+                    alt="App screenshot: meal recommendation page"
+                    loading="eager"
                     decoding="async"
                   />
-                  <div class="shot-fallback">If this looks blank, add: assets/recommendation.png</div>
+                  <div class="shot-fallback">Add: assets/meal-rec-hero.jpg</div>
                 </div>
               </div>
 
@@ -147,16 +145,16 @@
             <div class="strip-value">Pressure loops</div>
           </div>
           <div class="strip-item">
-            <div class="strip-kicker">Interaction model</div>
-            <div class="strip-value">Decision relief</div>
+            <div class="strip-kicker">Defaults to</div>
+            <div class="strip-value">Calm choices</div>
           </div>
           <div class="strip-item">
-            <div class="strip-kicker">Affirmation</div>
-            <div class="strip-value">Only when earned</div>
+            <div class="strip-kicker">Never requires</div>
+            <div class="strip-value">An account</div>
           </div>
           <div class="strip-item">
-            <div class="strip-kicker">Principle</div>
-            <div class="strip-value">Calm &gt; optimization</div>
+            <div class="strip-kicker">Not a diet app</div>
+            <div class="strip-value">No tracking</div>
           </div>
         </div>
       </section>
@@ -166,38 +164,54 @@
         <div class="container">
           <div class="section-head">
             <h2>How it works</h2>
-            <p>Two flows: intentional (primary) or passive (optional). Both stay calm.</p>
+            <p>Choose a vibe, get a meal, keep your night moving.</p>
           </div>
 
           <div class="grid-3">
             <div class="tile">
-              <h3>Find My Meal (Primary)</h3>
-              <p>Choose what you can handle tonight. Submit and get a small, bounded set of options.</p>
+              <h3>Pick your filters</h3>
+              <p>Choose what you can handle tonight: mode, mood, and cuisine. Add extras only if you want.</p>
               <ul class="mini-list">
-                <li><strong>Required:</strong> Mode, Mood, Cuisine</li>
+                <li><strong>Core:</strong> Mode, Mood, Cuisine</li>
                 <li><strong>Optional:</strong> Dietary, Time, Ingredients</li>
               </ul>
             </div>
 
             <div class="tile">
-              <h3>Recommendation Page</h3>
-              <p>One main meal + two alternates. Retry if nothing fits. Always optional, never a treadmill.</p>
+              <h3>Get one main meal</h3>
+              <p>You get a primary recommendation with the details you need to make it real.</p>
               <ul class="mini-list">
-                <li>Retry (same context)</li>
-                <li>Edit filters (preserves selections)</li>
-                <li>Save • I made this</li>
+                <li>Time • ingredients • method • cost vibe</li>
+                <li>Supportive copy (no shame)</li>
+                <li>Save if it works</li>
               </ul>
             </div>
 
             <div class="tile">
-              <h3>Daily Meal (Tarot Flow) — Optional</h3>
-              <p>One daily dinner pull. Tarot-style tone. Deterministic per user/day. No filters.</p>
+              <h3>Gentle backups</h3>
+              <p>If the first option isn’t it, you get gentle alternates — and an easy “show me another.”</p>
               <ul class="mini-list">
-                <li>Save</li>
-                <li>I made this</li>
-                <li>No “show me another”</li>
-                <li>No grocery list actions</li>
+                <li>Two backup cards</li>
+                <li>Retry without a treadmill</li>
+                <li>“I made this” when you want</li>
               </ul>
+            </div>
+          </div>
+
+          <!-- Spec: use your second screenshot to show backups flow -->
+          <div class="how-shot">
+            <div class="shot">
+              <div class="shot-inner solid">
+                <div class="shot-label">Gentle backups (from the app)</div>
+                <img
+                  class="shot-img"
+                  src="assets/meal-rec-backups.jpg"
+                  alt="App screenshot: gentle backup meal cards"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="shot-fallback">Add: assets/meal-rec-backups.jpg</div>
+              </div>
             </div>
           </div>
         </div>
@@ -213,33 +227,23 @@
 
           <div class="feature-grid">
             <div class="feature">
-              <h3>2,000+ meals</h3>
-              <p>Across cuisines, moods, dietary preferences, and time constraints.</p>
+              <h3>Meal ideas that feel human</h3>
+              <p>Supportive, realistic suggestions that don’t pretend your kitchen is a TV set.</p>
             </div>
 
             <div class="feature">
-              <h3>Daily tarot-style dinner pull</h3>
-              <p>A passive suggestion when you don’t want to think.</p>
+              <h3>Small, bounded choices</h3>
+              <p>One main option + backups. Enough agency to breathe, not enough to spiral.</p>
             </div>
 
             <div class="feature">
-              <h3>Find My Meal filters</h3>
-              <p>Mode + mood + cuisine, plus optional dietary/time/ingredients.</p>
+              <h3>Filters that stay gentle</h3>
+              <p>Mode + mood + cuisine, plus optional dietary/time/ingredients when you want them.</p>
             </div>
 
             <div class="feature">
-              <h3>Meal packs (10 total)</h3>
-              <p>Static, curated collections for nights when “I don’t know” is the answer.</p>
-            </div>
-
-            <div class="feature">
-              <h3>Save + grocery lists</h3>
-              <p>Save what works. Grocery lists are built from saved meals only.</p>
-            </div>
-
-            <div class="feature">
-              <h3>“I made this” → Weekly Meals (premium)</h3>
-              <p>Proud of you. Then a weekly list for reflection — no counters, no streaks.</p>
+              <h3>Save what works</h3>
+              <p>Keep favorites for later. No scoring, no gamification, no weird guilt.</p>
             </div>
 
             <div class="feature">
@@ -255,7 +259,7 @@
         </div>
       </section>
 
-      <!-- Screenshots -->
+      <!-- Screenshots (keep calm + honest; remove placeholders you don’t have yet) -->
       <section class="section">
         <div class="container">
           <div class="section-head">
@@ -265,63 +269,37 @@
 
           <div class="shots">
             <div class="shot">
-              <div class="shot-inner">
-                <div class="shot-label">Tarot pull</div>
+              <div class="shot-inner solid">
+                <div class="shot-label">Meal recommendation</div>
                 <img
                   class="shot-img"
-                  src="assets/tarot-front.png"
-                  alt="App screenshot: tarot pull"
+                  src="assets/meal-rec-hero.jpg"
+                  alt="App screenshot: meal recommendation"
                   loading="lazy"
                   decoding="async"
                 />
-                <div class="shot-fallback">Add screenshot: assets/tarot-front.png</div>
+                <div class="shot-fallback">Add: assets/meal-rec-hero.jpg</div>
               </div>
             </div>
 
             <div class="shot">
-              <div class="shot-inner">
-                <div class="shot-label">Tarot reveal</div>
+              <div class="shot-inner solid">
+                <div class="shot-label">Gentle backups</div>
                 <img
                   class="shot-img"
-                  src="assets/tarot-back.png"
-                  alt="App screenshot: tarot reveal"
+                  src="assets/meal-rec-backups.jpg"
+                  alt="App screenshot: gentle backups"
                   loading="lazy"
                   decoding="async"
                 />
-                <div class="shot-fallback">Add screenshot: assets/tarot-back.png</div>
-              </div>
-            </div>
-
-            <div class="shot">
-              <div class="shot-inner">
-                <div class="shot-label">Meal packs</div>
-                <img
-                  class="shot-img"
-                  src="assets/packs.png"
-                  alt="App screenshot: meal packs"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="shot-fallback">Add screenshot: assets/packs.png</div>
-              </div>
-            </div>
-
-            <div class="shot">
-              <div class="shot-inner">
-                <div class="shot-label">Saved for later</div>
-                <img
-                  class="shot-img"
-                  src="assets/saved.png"
-                  alt="App screenshot: saved meals"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="shot-fallback">Add screenshot: assets/saved.png</div>
+                <div class="shot-fallback">Add: assets/meal-rec-backups.jpg</div>
               </div>
             </div>
           </div>
 
-          <p class="hint">Tip: Drop PNGs into /assets with these filenames. The layout will auto-fit.</p>
+          <p class="hint">
+            Assets expected in <code>/assets</code>: <code>app-icon.png</code>, <code>meal-rec-hero.jpg</code>, <code>meal-rec-backups.jpg</code>
+          </p>
         </div>
       </section>
 
@@ -335,7 +313,8 @@
 
           <div class="premium-card">
             <p class="premium-body">
-              Premium unlocks additional modes and meals for nights when you want more structure — without turning dinner into a project.
+              Premium unlocks additional meals and structure for nights when you want more guidance —
+              without adding notifications, streaks, or engagement traps.
             </p>
 
             <div class="premium-lines">
@@ -413,7 +392,7 @@
               <summary>Is this a recipe app?</summary>
               <div class="faq-body">
                 <p>
-                  Not really. Girl Dinner Tonight is a dinner decision assistant. It gives you a primary suggestion and a couple of alternates —
+                  Not really. Girl Dinner Tonight is a dinner decision assistant. It gives you a primary suggestion and gentle backups —
                   enough choice to feel agency, without overwhelming you.
                 </p>
               </div>
@@ -427,11 +406,9 @@
             </details>
 
             <details class="faq-item">
-              <summary>How do saves and grocery lists work?</summary>
+              <summary>How do saves work?</summary>
               <div class="faq-body">
-                <p>
-                  Saved meals live in the Saved tab. Grocery lists can only be created from saved meals — on purpose — so lists stay clean and relevant.
-                </p>
+                <p>Saved meals live in the Saved tab. They’re just for you — no scoring, no “streak,” no “do better.”</p>
               </div>
             </details>
 
@@ -448,7 +425,7 @@
             <details class="faq-item">
               <summary>Is this only for women?</summary>
               <div class="faq-body">
-                <p>It is designed with women’s lived experience in mind, but anyone who wants calm, realistic dinner decisions can use it.</p>
+                <p>It’s designed with women’s lived experience in mind, but anyone who wants calm, realistic dinner decisions can use it.</p>
               </div>
             </details>
           </div>
